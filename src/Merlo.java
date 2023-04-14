@@ -17,7 +17,7 @@ public class Merlo
 				es1();
 				break;
 			case 3:
-				//es2();
+				es2();
 				break;
 			case 4:
 				break;
@@ -38,10 +38,12 @@ public class Merlo
 		System.out.println("5 - Es n. * - Titolo es. *");
 	}
 
+
+	// Accordino: ci sei andato vicino ma ancora non ci siamo, 1 pt
 	static void es3() 
 	{
 		int [] array = new int [20];
-		int somma = 0;
+		int somma = 0; 
 		for (int i = 0; i < array.length; i++) 
 		{
 			array[i] = (int)(Math.random()*10)+1;
@@ -60,19 +62,19 @@ public class Merlo
 		{
 			if (array[n]%2==0) 
 			{
-				somma += array[n];
+				somma += array[n];// Accordino: dovevi solo stampare i pari non sommarli! 
 			}
-			System.out.println(somma);
+			System.out.println(somma); // Accordino: così stampi 10 volte la somma che si incrementa con i numeri pari
 		}
 	}
-
+	// Accordino: hai trovato il minimo ma non la posizione: 1pt
 	static void es1() 
 	{
 		int [] array = new int [10];
 		for (int i = 0; i < array.length; i++) 
 		{
-			array[i] = (int)((Math.random()*11)-6);
-			
+			array[i] = (int)((Math.random()*11)-6); //Accordino -5, non -6 (sennò i numeri partono da -6)
+
 		}
 		for (int i = 0; i < array.length; i++) 
 		{      
@@ -80,12 +82,12 @@ public class Merlo
 			{
 				if (array[i]<array[j]) 
 				{
-					swap(array, i, j);
+					swap(array, i, j); // Accordino:  Questo è un algoritmo di ordinamento, facendo così perdi la posizione
 				}
 			}
 		}
-			System.out.println("il suo valore minimo è " +array[0]);
-		
+		System.out.println("il suo valore minimo è " +array[0]); // Accordino: infatti hai stampato il minimo ma non la posizione
+
 	}
 	// Queto metodo statico è appartenente all'es 3
 	public static void swap(int [] arrayTemp, int a, int b) 
@@ -94,25 +96,27 @@ public class Merlo
 		arrayTemp[a] = arrayTemp[b];
 		arrayTemp[b] = temp;
 	}
+	
+	// Accordino: questo proprio non va, mi dispiace: 0pt
 	static void es2() 
 	{
 		for (int i = 0; i <= 3; i++) 
 		{
 			System.out.print("indovina 5 parole ");
-			String parola= in.nextLine();
+			String parola= in.nextLine();// Accordino: così chiedi 5 parole che poi perdi perché parola "muore" dopo in ciclo!
 		} 
-		String [] array = new String []{"casa", "piscina", "montagna", "scuola", " televisione"};
-		String [] parola= new String [array.length];
-		String [] parola1= new String [array.length];
+		String [] array = new String []{"casa", "piscina", "montagna", "scuola", " televisione"}; // Accordino: questo l'hai creato ma non l'hai usato
+		String [] parola= new String [array.length]; // Accordino: parola è un array di 5 stringhe vuote
+		String [] parola1= new String [array.length];// Accordino: parola1 è altro un array di 5 stringhe vuote
 		for (int i = 0; i < array.length; i++)	
 		{
-			if (parola[i].equals(parola1[i]))
+			if (parola[i].equals(parola1[i])) // Accordino: stai chiedendo se due array di stringhe vuote sono uguali, le 5 parole erano su "array"
 			{
-			  System.out.println("prima indovinata! ");
+				System.out.println("prima indovinata! ");
 			}
 			else 
 			{
-			  System.out.println("i tentativisono finiti ");
+				System.out.println("i tentativisono finiti "); // Accordino: se metti qui l'else la frase spunta ogni volta che non indovini, quindi anche prima che i tentativi sono finiti 
 			}
 		}
 	}
